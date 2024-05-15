@@ -1,9 +1,36 @@
-TeachableMachine
+
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="myStyle.css">
+<title>Kunstig Intelligens</title>
+</head>
+
+<body>
+<h1>Kunstig Intelligens</h1>
+
+<div class="topnav">
+  <a href="index.html"> Hjem </a>
+  <a href="indexFægte.html"> Spil, Leg og Samarbejde </a>
+  <a href="indexTM.html">Kunstig intelligens</a>
+  <a href="IndexWebteknologier.html">Webteknologier</a>
+  <a href="indexbilled.html">Billedmanipulation</a>
+  <a href="indexData.html">Databaser</a>
+  <a href="indexSikkerhed.html">IT-Sikkerhed</a>
+</div>
+
+<p>Kunstig intelligens fylder meget, og kommer kun til at fylde mere i vores dagligdag.
+<br>
+Det er derfor meget relevant at tilegne sig den relevante viden om emnet
+<br>
+Vi har brugt Googles "Teachable Machine" til at lave vores egne projekter omhandlende kunstig intelligens og mskin-læring
+<br>
+Herunder ses en model fra Teachable Machine som kan kende forskel på sten, saks og papir.
+</p>
 
 
-<div>Teachable Machine Image Model - p5.js and ml5.js</div>
+
 <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/p5.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/p5@latest/lib/addons/p5.dom.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/ml5@latest/dist/ml5.min.js"></script>
@@ -65,11 +92,23 @@ TeachableMachine
     }
     // The results are in an array ordered by confidence.
     // console.log(results[0]);
-    label = results[0].label + "     " + results[0].confidence + "%";
+    label = results[0].label + ":   " + (results[0].confidence)*100 + "%";
     // Classifiy again!
     console.log(results);
     classifyVideo();
   }
 </script>
+
+</body>
+
+
+<body>
+<h2> links til projekt-undersider </h2>
+
+<a href="SelfDriveCar/bilVIRKER.html"> Selvkørende bil </a>
+
+</body>
+
 </html>
 
+</html>

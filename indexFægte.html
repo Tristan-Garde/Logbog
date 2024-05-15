@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="myStyle.css">
+<title>Fægtespillet</title>
+</head>
+
+
+
+<body>
+<h1>Spil, Leg og Samarbejde</h1>
+
+<div class="topnav">
+    <a href="index.html"> Hjem </a>
+    <a href="indexFægte.html"> Spil, Leg og Samarbejde </a>
+    <a href="indexTM.html">Kunstig intelligens</a>
+    <a href="IndexWebteknologier.html">Webteknologier</a>
+    <a href="indexbilled.html">Billedmanipulation</a>
+    <a href="indexData.html">Databaser</a>
+    <a href="indexSikkerhed.html">IT-Sikkerhed</a>
+  </div>
+
+<h2>Introduktion </h2>
+<p> 
+    Vores første forløb omhandler Spil, Leg og Samarbejde <br>
+    Stigningen af børn, som bruger internettet og spiller computer, betyder at færre og færre bevæger sig. <br>
+    Vores projekt tager udgangspunkt i at bekæmpe ild med ild, og vi har derfor programeret et spil, hvor bevægelse er centralt. <br>
+    Til dette bruger vi en "Makey Makey", som gør det muligt at få genstande til at fungere som knapper på computeren, ved at tilslutte dem via Makey Makey <br> <br>
+
+    Vi har designet og fremstillet 2 fysiske sværd, samt 2 fysiske mave-plader.
+ <br>
+    De kan tilsluttes computeren, så når en maveplade bliver ramt af et sværd, bliver det registreret som et tryk på venstre eller højre piletast afhængig af, hvem bliver ramt. <br>
+    Spillet mister lidt af sin charme uden disse rekvisitter, men man kan eventuelt fremstille noget lignende derhjemme, eller blot bruge piletasterne, når man prøver spillet herunder: <br>
+
+     
+    <a href="Faegtespil/index.html"> Prøv spillet her </a>
+
+    </p>
+</p>
+<h2>Krav til Projektet </h2>
+
+<p>
+    <ul>
+        <li>Kan spilles af to eller flere personer, der fysisk er i nærheden af hinanden.</li>
+        <li>Involverer et samarbejdende eller konkurrerende element, gerne inspireret af sport.</li>
+        <li>Styres med Makey Makey og ikke direkte fra computeren.</li>
+      </ul>
+
+</p>
+
+<h2>Fægtespillet </h2>
+
+<h3> Æstetik</h3>
+
+<p>
+    Her ser vi spillet i praksis som viser 2 personer, som spiller mod hinanden, som begge er i fuld gang med bevægelse, og har det oven i købet sjovt samtidig:
+    <img src="Fægteselmaog_angela.jpg" width=40%> <br>
+    På billedet kan vi også se sværdene og mavepladerne være tilsluttet til computeren via Makey Makey. <br>
+    Designet af sværd og maveplader tager grobund i en gammeldags gladiator-stil, som hjælper spillere med at føle sig integreret i spillet. <br>
+</p>
+
+<h3>Features</h3>
+
+<p>
+
+    <ul>
+        <li>En tæller kan ses i øverst i hhv. højre og venstre hjørne, som viser hvor mange gange en spiller har ramt den anden.</li>
+        <li>Når en spiller bliver ramt, høres et skrig fra den spiller, samt et billede bliver vist af dem blive ramt. Nedenfor ses fx. Oskar blive ramt.</li>
+        <li>Der bliver spillet dramatisk baggrundsmusik, og der bliver fægtet i et storslået stadion, hvilket yderligere motiverer til at bevæge sig og engagere sig i spillet.</li>
+      </ul>
+      <img src="Fægte eksempel 12.5.png" width=40%>
+    
+</p>
+
+
+
+
+
+
+
+<h2>Kode</h2>
+<p>
+
+<img src="Fægte eksempel kode 12.5.png" style="width:500px;float:left;">
+<br>
+<br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+Her ser vi koden som holder styr på scores i hjørnerne. <br>
+Variablen "hit1" indikerer på den ene karakters score, mens "hit2" indikerer den modstående karakters score. <br> 
+<br>
+Vi kan se at hvis venstre piletast bliver trykket på, vil denne variabel stige med 1. Venstre piletast er som sagt tilsluttet Makey Makey, så det er altså tilsvarende til, at score går 1 op hver gang, man slår den anden. <br>
+Samme mekanisme gør sig gældende med højre piletast og "hit2". <br>
+<br>
+Når der bliver registreret et tryk på højre eller venstre piletast, bliver der også eksekveret funktionerne hhv. "SoundEffect1" og Soundeffect2" <br>
+Dette er så der er forskellige lyde tilknyttet, afhængig af, hvem bliver ramt. <br>
+</p>
+
+<p>
+    <img src="Fægte eksempel 12.5 kode 2.png" style="width:500px;float:left;">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    Funktionerne har til formål at vælge på tilfældig vis 1 af 3 lyde (krigsbrøl), som skal afspilles, når en spiller bliver ramt. <br>
+    Vi definerer en variabel n, som værende et tilfældigt helt tal mellem 0 og 2. Derefter plusser vi med 1, så vi får et tilfældigt heltalt mellem 1 og 3, altså enten 1, 2 eller 3. <br>
+    Nedenunder ser vi så at der bliver spillet 1 af 3 lydeffekter, afhængig af n's værdi. <br> 
+    <br>
+    "Soundeffect2" fungerer på præcis samme måde, men der bliver valgt imellem 3 andre lydeffekter.
+
+</p>
+<h3>Rutediagram</h3>
+
+
+
+
+
+</body>
+</html>
