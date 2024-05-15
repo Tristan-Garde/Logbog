@@ -1,0 +1,21 @@
+ID,navn,billede,farlighed
+1,Elefant,pics/elefant.jpg,75%
+2,Tiger,pics/tiger.jpg,95%
+3,Hest,pics/hest.jpg,42%
+4,Fisk,pics/fisk.jpg,0%
+5,Hund,pics/hund.jpg,20%
+6,Kat,pics/kat.jpg,10%
+7,Giraf,pics/giraf.jpg,48%
+8,Edderkop,pics/edderkop.jpg,5%
+9,Myg,pics/myg.jpg,1%
+10,Due,pics/due.jpg,3%
+11,Gorilla,pics/gorilla.jpg,88%
+12,Søpindsvin,pics/sopindsvin.jpg,22%
+13,Ørn,pics/orn.jpg,63%
+14,Isbjørn,pics/isbjorn.jpg,100%
+15,Elektrisk ål,pics/ol.jpg,31%
+16,Næsehorn,pics/naesehorn.jpg,73%
+17,T-Rex,pics/trex.jpg,200%
+18,Bi,pics/bi.jpg,8%
+19,Flodhest,pics/flodhest.jpg,96%
+20,Ræv,pics/raev.jpg,28%

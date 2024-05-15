@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+<body>
+<h1>Gæt et Dyr!</h1>
+
+<img id="billede" style="width: 50%;">
+<p id="farlighed"></p>
+<button type="button" onclick="forkert()" id="navny">➡️➡️➡️</button>
+<button type="button" onclick="rigtig()" id="navn">Start</button>
+<button type="button" onclick="forkert()" id="navnz">⬅️⬅️⬅️</button>
+
+
+<h2>Score: </h2>
+<h3 id="score"></h3>
+
+</body>
+</html>
+
+<script>
+  let x;
+  let y;
+  let z;
+  let data;
+  let score = 1;
+  let n;
+  let SE1 = new Audio("SE/F1.m4a");
+  let SE2 = new Audio("SE/F2.m4a");
+  let SE3 = new Audio("SE/F3.m4a");
+  let SE4 = new Audio("SE/R1.m4a");
+  let SE5 = new Audio("SE/R2.m4a");
+  let SE6 = new Audio("SE/R3.m4a");
+
+
+  function forkert(){
+    score -= 1;
+    ny();
+    SoundEffectF()
+    
+  }
+
+
+  function rigtig(){
+  score += 1;
+  ny();
+  SoundEffectR()
+  }
+
+
+function ny() {
+  var pic;
+  
+  x = Math.floor(Math.random()*20+1);
+  y = Math.floor(Math.random()*20+1);
+  z = Math.floor(Math.random()*20+1);
+  if (y == x){
+    ny();
+  }
+  if(z == x){
+    ny();
+  }
+  
+  if (z == y){
+    ny();
+  }
+
+  genererTekst(x);
+  genererTekstY(y);
+  genererTekstZ(z);
+  pic = document.getElementById('billede').innerHTML = billede;  
+  document.getElementById('billede').src = pic;
+  document.getElementById('farlighed').innerHTML = "Farlighed: " + farlighed;
+  document.getElementById('navn').innerHTML = navn;
+  document.getElementById('navny').innerHTML = navny;
+  document.getElementById('navnz').innerHTML = navnz;
+  document.getElementById('score').innerHTML = score;
+}
+
+function genererTekst(x){
+  for (var i = 0; i < data.length; i++) {
+      if (data[i]["ID"] == x) {
+        billede = data[i]['billede'];
+        farlighed = data[i]['farlighed'];
+        navn = data[i]['navn'];
+ 
+        break; // exit efter loop
+      }
+    }
+}
+
+function genererTekstY(y){
+  for (var i = 0; i < data.length; i++) {
+      if (data[i]["ID"] == y) {
+        navny = data[i]['navn'];
+ 
+        break; // exit efter loop
+      }
+    }
+}
+
+function genererTekstZ(z){
+  for (var i = 0; i < data.length; i++) {
+      if (data[i]["ID"] == z) {
+        navnz = data[i]['navn'];
+ 
+        break; // exit efter loop
+      }
+    }
+}
+
+function SoundEffectF(){
+    n=Math.floor(Math.random()*3+1);
+    if(n==1){
+      SE1.play();
+    }
+    if(n==2){
+      SE2.play();
+      
+    }
+  if(n==3){
+    SE3.play();
+  }
+}
+  function SoundEffectR(){
+    n=Math.floor(Math.random()*3+1);
+    if(n==1){
+      SE4.play();
+    }
+    if(n==2){
+      SE5.play(); 
+    }
+  if(n==3){
+    SE6.play();
+  }
+  }
+
+window.onload = function() {
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "database.csv", true);
+xhr.responseType = "text";
+xhr.onload = function() {
+  data = Papa.parse(xhr.responseText, {
+    header: true // set this to true if the first row contains the header names
+  }).data;
+};
+xhr.send();
+}
+</script>
