@@ -64,43 +64,40 @@
     
 
     //Draw car
-    
-    
-    
     image(Bil,x+530,y+425,100,100)
-    
     
     if (label == "Right"){
     x+=0.5*z
     z+=a
     Bil=img3
-
     }
+
     if (label == "Left"){
     x+=(-0.5)*z
     z+=a
     Bil=img4
     }
+
     if (label == "Straight"){
     y+=(-0.5)*z
     z+=a
     Bil=img2
-    
     }
+
     if (label == "Reverse"){
     y+=0.5*z
     z+=a
     Bil=img2
     }
+
     if (label == "Brake"){
-    
-    
     }
+
     if (label == "Nothing"){
-    
     z=1
     a=0.15
     }
+
     if(x>950){
       x=0
       y=0
@@ -117,8 +114,6 @@
       x=0
       y=0
     }
-    
-
     
 
   }

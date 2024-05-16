@@ -17,17 +17,20 @@
   <a href="IndexWebteknologier.html">Webteknologier</a>
   <a href="indexbilled.html">Billedmanipulation</a>
   <a href="indexData.html">Databaser</a>
-  <a href="indexSikkerhed.html">IT-Sikkerhed</a>
 </div>
 
-<p>Kunstig intelligens fylder meget, og kommer kun til at fylde mere i vores dagligdag.
+<p>
+<h2>Baggrund</h2>
+  Kunstig intelligens fylder meget, og kommer kun til at fylde mere i vores dagligdag.
 <br>
 Det er derfor meget relevant at tilegne sig den relevante viden om emnet
+<br> <br>
+Efterhånden udvikler kunstig intelligens sig til at være meget let tilgængeligt for den bredere offentlighed med bl. a ChatGPT og Googles teachable machine. <br>
 <br>
-Vi har brugt Googles "Teachable Machine" til at lave vores egne projekter omhandlende kunstig intelligens og mskin-læring
-<br>
-Herunder ses en model fra Teachable Machine som kan kende forskel på sten, saks og papir.
+
 </p>
+
+</body>
 
 
 
@@ -67,6 +70,7 @@ Herunder ses en model fra Teachable Machine som kan kende forskel på sten, saks
     background(0);
     // Draw the video
     image(flippedVideo, 0, 0);
+  
 
     // Draw the label
     fill(255);
@@ -99,16 +103,104 @@ Herunder ses en model fra Teachable Machine som kan kende forskel på sten, saks
   }
 </script>
 
-</body>
+
 
 
 <body>
-<h2> links til projekt-undersider </h2>
+  <p>
+    <h3>Grundlæggende forskelle på kunstig intelligens (AI) og sekventiel ("klassisk") programering</h3>
+      
+    <ul>
+      <li>En AI har nemmere ved at tilpasse sig en specifik situiation, hvorimod sekventiel programmering kun gør præcis hvad den bliver bedt om</li>
+      <li>En AI er i stand til at lære af sine egne fejl og dermed forbedre sig selv.</li>
+      <li>Det er meget nemmere at finde en fejl, eller en grund til en hvis beslutning i et traditionelt computerprogram, hvorimod det ofte kan være svært at bestemme præcis hvad, der fik en Ai til at træffe en beslutning. Dette er hvorfor man ofte refererer til Ai som en "Black Box"</li>
+      <li>Sekventiel programmering refereres ofte til som "deterministisk", hvilket betyder at man altid får det samme output givet det samme input. Det er altså meget forudsigeligt</li>
+    </ul>
+    Mange af ovenstående pointer får AI til at virke som den klare vinder, men der er mange steder hvor at det er at foretrække at få et forudsigeligt output. Det er også meget nemmere at have et fuldt overblik over sit program og hvilke variable spiller ind, når det er deterministisk. <br>
+    <br>
+    Der er altså ikke nødvendigvis èn som er bedre end den anden, men begge har fordele og ulemper.
+    
+    
+    <h3>Hvilken rolle kan kunstig intelligens spille i samfundet?</h3>
+    </p>
+    <p>
+      AI spiller i forvejen en stor rolle i mange aspekter af vores dagligdag som vi ikke tænker over. <br>
+      Blandt andet bliver det brugt af firmaer bag sociale medier til at anbefale indhold til deres brugere. Det bliver bl. a også allerede brugt på flere hospitaler til at diagnosticere patienter ud fra fx blodprøver og MR-scanninger. <br>
+      <br>
+      Kun fantasien kan sætte grænser til hvad det kan bruges til i fremtiden, men mange projekter er allerede godt i gang <br>
+      Selvkørende biler er en klar kandidat til et job som bliver overtaget af AI. Ironisk nok kan programmering også blive noget, som i højere grad bliver overladt til AI, da de kan finde sammenhænge som mennesker kan have meget svært ved at spotte. <br>
+      <br>
+      Debatten omkring AI er meget kompliceret og mange forskellige synspunkter findes, men umiddelbart ser AI ud til at være en uundgåelig del af vores alle sammens fremtid. Det er nok under alle omstændigheder vigtigt at sprede bevidsthed om hvordan Ai fungerer til den bredere befolkning, så vi som samfund kan tage silling til de etiske dillemaer, som kan forekomme ved brug af en Black Box-AI.<br>
 
-<a href="SelfDriveCar/bilVIRKER.html"> Selvkørende bil </a>
+
+    </p>
+
+    <p>
+      <h2>Vores Projekt</h2>
+      Vi skal eksperimentere med Teachable Machine og forsøge at lave hvad Elon Musk indtil videre har haft store problemer med, nemlig en selvkørende bil. <br>
+      Vores bil er dog virtuel og køre via Teachable Machine, hvilket gør opgaven en anelse nemmere. <br>
+      <br>
+      Til dette projekt har jeg allieret mig med Albert fra 2022k, da vi delte ambitionen om at lave den bedst mulige selvkørende bil. <br>
+      <br>
+      Vores bil skal kunne:
+
+      <ul>
+        <li>Navigere på en virtuel bane.</li>
+        <li>Stoppe for rødt.</li>
+      </ul>
+      
+      Vores bil kører ved hjælp af kameraet på computeren og den adlyder vores hjemmelavede skilte, som hver især får den til at gøre noget bestemt.
+      
+    <h4>For at prøve spilllet kan du printe skiltene ud og prøve spillet HER⤵️</h4> <a href="/billedertilbil" download>Download billeder <br>
+
+    <br>
+    
+     <a href="SelfDriveCar/bilVIRKER.html"> Prøv Bilen </a>
+
+      <br>
+      <br>
+      <br>
+      <img src="Bil eksempel 3 15.5.png" style="width:1500px;float:left;">
+      <br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <h2>Eksempler på kode:</h2>
+      Vores model fra teachable machine er lidt en black box, men hvad der er vigtigt at vide er forbindelsen mellem modellen og vores programmering.<br>
+      <br>
+      Resultaterne af billedgenkendelsen ligger i en struktur kaldet "dictionary", som viser en liste over muligheder, samt et label (navn) og en confidence-sore (hvor sikker modellen er). <br>
+      Resultaterne ligger rangeret efter hvor sikker modellen er, så vi vil gerne hav fat i labellen fra 0. række, når vi skal give vores bil en kommando, da det er den mulighed modellen er mest sikker på. Dette gemmer vi i linje 144 i variablen "label"<br>
+      <br>
+      <img src="Bil eksempel 15.5.png" style="width:500px;float:left;">
+      <br>
+      <br>
+      Denne labet bruger vi så til at give vores bil instruktioner. <br>
+      <br>
+      <img src="Bil eksempel 2 15.5.png" style="width:500px;float:left;">
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    I linje 67 bliver bilen tegnet. Vi kan se at dens position er afhængig af en x og en y variabel. Det er dem vi ændrer på afhængig af hvad vores label er. <br>
+    Det kan ses i linje 69-91 at x og y enten bliver gjort større eller mindre afhængig af hvilket label vores teachable macine vurderer. <br>
+    <br>
+    Udover vores konstant, 0.5, bliver x og y værdierne også påvirket af en z-værdi. Dette har vi programmeret ind for at simulere acceleration.<br>
+    Lad os tage et ekempel hvor bilen får at vide at den skal køre mod højre på skærmen (linje 69-73).<br>
+    <br>
+    Hver gang kameraet ser "Right" bliver z-værdien større med en a-værdi. a værdien kan ændres på i programmet, men vi har sat den til 0,15. <br>
+    Bilens position bliver ændret med 0,5*z, så jo større z er, jo mere ændrer bilens position sig sltså. Med andre ord, jo længere tid bilen har kørt mod højre, jo hurtigere vil den køre. <br>
+    Når bilen står stille og altså ikke får noget at vide, bliver z-værdien nulstillet, som kan ses i linje 97.
+    Dette skaber altså en klar følelse af acceleration og gør bilen både nemmere og mere virkelighedsnær at styre på både korte og lande distancer samt svære sving, da den ikke altid har samme hastighed. <br>
+    <br>
+    Derudover ændres bilens udseende afhængig af hvilken vej den kører, hvilket endnu engang forstærker den virkelighedsnære fornemmelse. Dette kan fx ses i linje 72. <br>
+    <br>
+
+    Hvis vi havde mere tid til at udvikle ville vi nok have prøvet en mere avanceret bane, og måske trænet vores model til endnu bedre at kunne kende forskel på vores skilte, da det nogle gange er en smule svært for den.
+
+    <h3>Sten, Saks, Papir</h3>
+
+    Hvis alt den snak om biler og acceleration gør dig ør i hovedet kan herunder også afprøves en simpel model, som kan kende forskel på sten saks eller papir og fremvise en procent-vurdering på hvor sikker modellen er hvis det kunne være noget : )
+
+    </p>
 
 </body>
 
 </html>
+<html>
 
-</html>
+  </html>

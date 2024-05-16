@@ -11,16 +11,121 @@
 
 
 <div class="topnav">
-    <a href="index.html"> Hjem </a>
-    <a href="indexFægte.html"> Spil, Leg og Samarbejde </a>
-    <a href="indexTM.html">Kunstig intelligens</a>
-    <a href="IndexWebteknologier.html">Webteknologier</a>
-    <a href="indexbilled.html">Billedmanipulation</a>
-    <a href="indexData.html">Databaser</a>
-    <a href="indexSikkerhed.html">IT-Sikkerhed</a>
-  </div>
+  <a href="index.html"> Hjem </a>
+  <a href="indexFægte.html"> Spil, Leg og Samarbejde </a>
+  <a href="indexTM.html">Kunstig intelligens</a>
+  <a href="IndexWebteknologier.html">Webteknologier</a>
+  <a href="indexbilled.html">Billedmanipulation</a>
+  <a href="indexData.html">Databaser</a>
+</div>
 
+<p>
+ <h2>Introduktion</h2>
+  Databaser er overalt på internettet, og da næsten alle hjemmesider på en eller anden måde tager udgangspunkt i at behandle og sende data, er det vigtigt at forstå hvad der ligger bag. <br>
 
-  <a href="FN verdensmål/FN_goals_loaddata.html"> FN Verdensmål selector </a> <br>
-  <a href="DyrDatabase/DyrDatabase.html"> Gæt et dyr </a>
+ <br>
+  Når man udvikler en database, snakker man om en såkaldt 3-lags-arkitektur:.
+  <ul>
+    <li>Databasen - Selve der hvor alle data ligger i ordnede tabeller, som holder styr på entiteter og attributter.</li>
+    <li>Logiklaget - Det lag, som behandler databasen og fx. gør det muligt at udvælge et tilfældigt verdensmål fra databasen.</li>
+    <li>Præsentationslaget - Det, som brugeren ser, og det som sørger for en overskuelig benyttelse af programmet.</li>
+  </ul>
+
+<h3>Databasen</h3>
+En database er kort sagt en eller flere tabeller som rummer, ja, data.
+Vi behandler databasen som en csv-fil, som der ligger i en komma-sepereret tabel-struktur.<br>
+Dette ser i praksis således ud: <br>
+<img src="Databaser eksempel kode.png" style="width:700px;float:left;">
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+Hvis man tænker på det som en klassisk tabel er rækkerne selvfølgelig rækkerne i koden og kollonnerne er sepereret af kommaer.<br>
+
+Når det kommer til konstruktion af databaser er der nogle fagtermer, som er vigtige at have styr på: <br>
+<ul>
+  <li>Entiteter: En entitet er ofte en fysisk ting som en person, men kan også være noget mere abstrakt som en ordre. En entitet kan tillægges attributter. </li>
+  <li>Attributter: En attribut er med andre ord en egenskab, som man kan tillægge en entitet. Det kan for eksempel være et navn eller en yndlingsfarve.</li>
+  <li>Primær nøgle: En primærnøgle er ofte ID'en på den entitet man beskriver med de følgende attributter i databasen. For at lave en god database, skal der kun være 1 primærnøgle pr. række.</li>
+  <li>Sekundær nøgle: En sekundær nøgle er en primærnøgle i en anden tabel, men noget som bliver henvist til. Dette kan fx. være en hunde-ID til en hvis ejer. Hunde-ID'en er en sekundær nøgle og ikke en attribut, da hunden fx. også kan have et navn i en tabel for sig.</li>
+  <li>Mange til 1 og 1 til mange relationer: En 1 til mange relation henviser til at fx 1 ejer godt kan have mange hunde. En mange til 1 relation referer til et forhold hvor fx. mange elever går på 1 skole.</li>
+</ul>
+For at effektivisere en database eller "normalisere" den er der nogle tommelfingerregler, som er vigtige at huske. <br>
+
+<ul>
+<li>Unik primærnøgle.</li>
+<li>Ingen kolonne må være afhængig af andre kolonner end primærnøglen.</li>
+<li>Der må kun være én datatype i hver kolonne.</li>
+<li>Det samme data skal kun forekomme et sted - det modsatte kaldes redundans.</li>
+<li>Data skal være relateret til hinanden.</li>
+</ul>
+
+<h3>Logiklaget</h3>
+Logiklaget skrives i javascript og har til opgave at læse og behandle dataen fra databasen og sende det videre til vores præsentationslag. <br>
+Vi kan bruge Mads Peters side om Fn som eksempel: <br>
+<a href="FN verdensmål/FN_goals_loaddata.html"> FN Verdensmål selector </a> <br>
+<br>
+I dette tilfælde er det fx. logiklaget, som står for at generere et tilfældigt FN-mål, samt sørge for at knapperne virker som de skal. <br>
+
+<h3>Præsentationslaget</h3>
+I præsentationslaget er det essentielt at gøre sig overvejelser vedrørende udseendet af ens hjemmeside, så den er så brugervenlig så mulig. <br>
+Don Norman har 6 designprincipper man kan huske når man står overfor at skulle designe et godt præsentationslag. <br>
+<ul>
+  <li>Visibility, synlighed, det man kan se bruger man.</li>
+  <li>Feedback, feedback ved handlinger.</li>
+  <li>Constraints, begrænsninger er godt, hvis det letter brugen.</li>
+  <li>Mapping, intet godt dansk ord, men et simpelt eksempel er at venstre piletast skal føre mod venstre, å tasten skal give et å osv.</li>
+  <li>Consistency, konsistens, at knapper betyder det samme gennem hjemmesiden og at designet ikke skifter umotiveret.</li>
+  <li>Affordance, tydelighed i anvendelse.</li>
+</ul>
+
+</p>
+<p>
+<h2>Vores Projekt</h2>
+  Vi har fået stillet en opgave om at lave en database med fokus på at forbinde de 3 lag så vidt muligt. <br>
+  Jeg har arbejdet sammen med Oskar fra 2022j og Elmer fra 2022k, og vi har valgt at lave et "Gæt et dyr"-spil, som gør brug af en database. <br><br>
+  Vores løsning skal indeholde: <br>
+  <ul>
+    <li>En html brugerflade hvor der er overvejet brugervenlighed</li>
+    <li>Data skal organiseres i en simpel database, regneark, som kan importeres som csv fil med javascript.</li>
+    <li>Der skal redegøres for hvordan databasen kan normaliserese ved at gøre den til en relationel database. Redegør herunder for relationsgraden.</li>
+  </ul>
+  <br>
+  Vi har i vores projekt gjort brug af alle 3 lag i 3-lags-arkitekturen.
+  <br>
+  I vores præsentationslag har vi indbygget god feedback i form af lyde, samt en pointscore, som tæller op eller ned alt efter om man svarer rigtigt eller forkert.
+  <br>
+  Lydene er indført på en lignende tilfældig måde som i vores "spil, leg og samarbejde"-projekt.
+  <img src="Databaser eksempel.png" style="width:700px;float:left;"> 
+  <br><br><br><br><br>
+  Dette er et udklip af koden fra vores knapper i spillet. 
+  <br>
+  Det er her vores HTML-lag bliver forbundet til vores Javascript, som kan ses ved at vi kører funktionerne "forkert()" eller "rigtig()"
+  <br><br>
+  Nu hopper vi ned i Js delen af vores kode.
+  <br>
+  <br>
+  <img src="Databaser eksempel 2.png" style="width:700px;float:left;">
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  Her ses en del af funktionen "ny()"
+  <br>
+  Vi kører her funktionen "genererTekst(x)", hvilket er en funktion som skal hente data op fra vores database.
+  <br>
+  Funktionen starter med at definere en variabel, i, som sættes lig 0. Herefter vil i vokse efter hver gennemkørsel, så længe i er mindre end data længden.
+  <br>
+  <br>
+  Imens dette sker, vil der kører en if-løkke, som her forbinder vores javascript til vores database. I linje 82 ses første del af den. 
+  <br>
+  Her bliver der tjekket om ID'et på den i'ene række svarer til x-værdien. Hvis den gør det vil der derefter defineres 3 variable: Billede, farlighed og navn ud fra den i'ene række og den givne kolonne i vores database. 
+  Denne info bliver altså hentet fra vores database og ind i vores javascript.
+  <br>
+  Kort sagt siger vi til koden at den skal gå ned i databasen, ned på i'ene række, og hen på en kolonne, hvorefter den skal hivne dataen op i javascript. Denne måde at opbevare data på kaldes et "Dictionary"
+  <br>
+  <br>
+  Disse variable bliver dernæst brugt i linje 71-77. Funktionen "document.getElementById().innerhtml" indsætter disse variable i vores html, der hvor der er defineret et Id. 
+  Dette kan ses i ovenstående billede, hvor der står "id="variable navn"", og det er her hvor den givne variable bliver indsat.
+  <br>
+  <br>
+  Test din viden HER⤵️ <br>
+ ___________ <a href="DyrDatabase/DyrDatabase.html"> Gæt et dyr </a>___________
+</p>
+
+ 
   
